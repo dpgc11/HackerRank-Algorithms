@@ -1,5 +1,7 @@
 package Warmup;
 
+import java.util.Scanner;
+
 public class CompareTheTriplets {
 
 	public static void main(String[] args) {
