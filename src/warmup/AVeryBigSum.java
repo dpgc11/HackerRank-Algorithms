@@ -1,11 +1,10 @@
-package Warmup;
+package warmup;
 
 import java.util.Scanner;
 
-public class SimpleArraySum {
+public class AVeryBigSum {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Scanner in = new Scanner(System.in);
         int n = in.nextInt();
         int arr[] = new int[n];
@@ -13,7 +12,7 @@ public class SimpleArraySum {
             arr[arr_i] = in.nextInt();
         }
         
-        int sum = 0;
+        long sum = 0;
         for (int i : arr) {
             sum += i;
         }
