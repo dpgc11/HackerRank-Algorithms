@@ -22,7 +22,6 @@ public class BetweenTwoSets {
 		int min = a[0];
 		int max = b[b.length - 1];
 		int count = 0;
-		// System.out.println(max+" "+min);
 		for (int i = min; i <= max; i++) {
 			if (hasFactors(i, a) && isFactor(i, b)) {
 				count++;
