@@ -9,6 +9,7 @@ public class BeautifulDaysAtTheMovies {
 		int startingDay = reader.nextInt();
 		int endingDay = reader.nextInt();
 		int divisibleBy = reader.nextInt();
+		reader.close();
 		int count = 0;
 
 		for (int i = startingDay; i <= endingDay; i++) {
