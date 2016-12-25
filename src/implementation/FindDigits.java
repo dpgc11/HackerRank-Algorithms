@@ -8,11 +8,11 @@ public class FindDigits {
 		Scanner reader = new Scanner(System.in);
 		int testCases = reader.nextInt();
 		for (int i = 0; i < testCases; i++) {
-			long num = reader.nextLong();
+			int num = reader.nextInt();
 			int count = 0;
-			long origNum = num;
+			int origNum = num;
 			while (num > 0) {
-				long rem = num % 10;
+				int rem = num % 10;
 				if (rem != 0) {
 					if (origNum % rem == 0)
 						count++;
