@@ -4,21 +4,26 @@ import java.util.Scanner;
 
 public class SimpleArraySum {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Scanner in = new Scanner(System.in);
+	static int simpleArraySum(int n, int[] ar) {
+        // Complete this function
+		int result = 0;
+		for (int i = 0; i < ar.length; i++) {
+			result += ar[i];
+		}
+		
+		return result;
+    }
+
+    public static void main(String[] args) {
+       
+        Scanner in = new Scanner(System.in);
         int n = in.nextInt();
-        int arr[] = new int[n];
-        for(int arr_i=0; arr_i < n; arr_i++){
-            arr[arr_i] = in.nextInt();
+        int[] ar = new int[n];
+        for(int ar_i = 0; ar_i < n; ar_i++){
+            ar[ar_i] = in.nextInt();
         }
-        
-        int sum = 0;
-        for (int i : arr) {
-            sum += i;
-        }
-        
-        System.out.println(sum);
-	}
+        int result = simpleArraySum(n, ar);
+        System.out.println(result);
+    }
 
 }
