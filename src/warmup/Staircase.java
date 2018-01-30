@@ -4,25 +4,38 @@ import java.util.Scanner;
 
 public class Staircase {
 
-	public static void printSpace(int num) {
-		for (int i = 0; i < num; i++)
-			System.out.print(" ");
-	}
-
-	public static void printHash(int num) {
-		for (int i = 0; i < num; i++)
-			System.out.print("#");
-	}
-
-	public static void main(String[] args) {
-		
-		Scanner reader = new Scanner(System.in);
-		int count = reader.nextInt();
-
-		for (int i = 1; i < count+1; i++) {
-			printSpace(count - i);
-			printHash(i);
-			System.out.println();
+	static void staircase(int n) {
+        // Complete this function
+		String result = "";
+		for (int i = 0; i < n - 1; i++) {
+			result += printSpaces(n - 1 - i) + printSymbol(i + 1) + "\n";
 		}
+		result += printSpaces(0) + printSymbol(n);
+		System.out.println(result);
+    }
+	
+	public static String printSpaces(int count) {
+		String space = " ";
+		String result = "";
+		for (int i = 0; i < count; i++) {
+			result += space;
+		}
+		return result;
 	}
+	
+	public static String printSymbol(int count) {
+		String symbol = "#";
+		String result = "";
+		for (int i = 0; i < count; i++) {
+			result += symbol;
+		}
+		return result;
+	}
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        staircase(n);
+        in.close();
+    }
 }
