@@ -4,38 +4,36 @@ import java.util.Scanner;
 
 public class PlusMinus {
 
-	public static void main(String[] args) {
-		Scanner reader = new Scanner(System.in);
-		int count = reader.nextInt();
-		int[] array = new int[count];
-
-		for (int i = 0; i < count; i++) {
-			array[i] = reader.nextInt();
-		}
+	static void plusMinus(int[] arr) {
+        // Complete this function
+		float positiveFraction = 0;
+		float negativeFraction = 0;
+		float zeroFraction = 0;
 		
-		reader.close();
-		
-		int positiveCount = 0;
-		int negativeCount = 0;
-		int zeroCount = 0;
-		
-		for (int i : array) {
-			if (i < 0) {
-				negativeCount++;
-			} else if (i > 0) {
-				positiveCount++;
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] > 0) {
+				positiveFraction++;
+			} else if (arr[i] < 0) {
+				negativeFraction++;
 			} else {
-				zeroCount++;
+				zeroFraction++;
 			}
 		}
 		
-		double positiveFrac = (positiveCount*1.0/count);
-		double negativeFrac = (negativeCount*1.0/count);
-		double zeroFrac = (zeroCount*1.0/count);
+		System.out.println("" + positiveFraction / arr.length);
+		System.out.println("" + negativeFraction / arr.length);
+		System.out.println("" + zeroFraction / arr.length);
 		
-		System.out.printf("%.6f %n",positiveFrac);
-		System.out.printf("%.6f %n",negativeFrac);
-		System.out.printf("%.6f %n",zeroFrac);
-	}
+    }
 
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int[] arr = new int[n];
+        for(int arr_i = 0; arr_i < n; arr_i++){
+            arr[arr_i] = in.nextInt();
+        }
+        plusMinus(arr);
+        in.close();
+    }
 }
