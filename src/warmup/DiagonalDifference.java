@@ -4,30 +4,33 @@ import java.util.Scanner;
 
 public class DiagonalDifference {
 
-	public static void main(String[] args) {
-		Scanner reader = new Scanner(System.in);
-		int count = reader.nextInt();
-		int[][] array = new int[count][count];
-
-		for (int i = 0; i < count; i++) {
-			for (int j = 0; j < count; j++) {
-				array[i][j] = reader.nextInt();
-			}
-		}
-
-		int sum1=0,sum2 = 0;
-
-		for (int i = 0; i < array.length; i++) {
-			sum1 += array[i][i] ;
-		}
-		for (int i = 0; i < array.length; i++) {
-			sum2 += array[i][array.length-i-1];
+	static int diagonalDifference(int[][] a) {
+		int result = 0;
+        // Complete this function
+		int diagonalA = 0;
+		int diagonalB = 0;
+		
+		for (int i = 0; i < a.length; i++) {
+			diagonalA += a[i][i];
+			diagonalB += a[i][a.length - 1 - i];
 		}
 		
-		int difference = Math.abs(sum1-sum2);
-		
+		result = Math.abs(diagonalA - diagonalB);
+		return result;
+    }
 
-		System.out.println(difference);
-	}
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int[][] a = new int[n][n];
+        for(int a_i = 0; a_i < n; a_i++){
+            for(int a_j = 0; a_j < n; a_j++){
+                a[a_i][a_j] = in.nextInt();
+            }
+        }
+        int result = diagonalDifference(a);
+        System.out.println(result);
+        in.close();
+    }
 
 }
