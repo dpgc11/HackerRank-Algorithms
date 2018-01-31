@@ -7,20 +7,26 @@ import java.util.Scanner;
 
 public class TimeConversion {
 
-	public static void main(String[] args) {
-		Scanner reader = new Scanner(System.in);
-		String time = reader.nextLine();
-		Date date = null;
-		
-		SimpleDateFormat parseFormat = new SimpleDateFormat("hh:mm:ssa");
-		SimpleDateFormat displayFormat = new SimpleDateFormat("HH:mm:ss");
+	static String timeConversion(String s) {
+		// Complete this function
+		String result = "";
+		SimpleDateFormat displayFormat = new SimpleDateFormat("hh:mm:ssaa");
+		SimpleDateFormat outFormat = new SimpleDateFormat("HH:mm:ss");
 		try {
-			date = parseFormat.parse(time);
+			result = outFormat.format(displayFormat.parse(s));
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println(displayFormat.format(date));
+		return result;
+
+	}
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		String s = in.next();
+		String result = timeConversion(s);
+		System.out.println(result);
 	}
 
 }
