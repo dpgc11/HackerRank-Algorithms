@@ -4,29 +4,31 @@ import java.util.Scanner;
 
 public class BonAppetit {
 
-	public static void main(String[] args) {
-		Scanner reader = new Scanner(System.in);
-		int n = reader.nextInt();
-		int k = reader.nextInt();
-		int sum = 0;
-		
-		for (int i = 0; i < n; i++) {
-			if (i != k) {
-				sum += reader.nextInt();
-			} else {
-				reader.nextInt();
-			}
+	public static void main(String args[] ) throws Exception {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+		Scanner in = new Scanner(System.in);
+		int foodCount = in.nextInt();
+		int ignoredIndex = in.nextInt();
+		int[] foodArray = new int[foodCount];
+		int actualMoney = 0;
+		for (int i = 0; i < foodCount; i++) {
+			int money = in.nextInt();
+			foodArray[i] = money;
 			
+			if (i != ignoredIndex) {
+				actualMoney += money;
+			}
 		}
-		
-		int chargedAmount = reader.nextInt();
-		int actualAmount = sum / 2;
-		
-		if (chargedAmount == actualAmount) {
-			System.out.println("Bon Appetit");
+		actualMoney /= 2;
+		int moneyCharged = in.nextInt();
+		String bonAppetit = "Bon Appetit";
+		if (moneyCharged == actualMoney) {
+			System.out.println(bonAppetit);
 		} else {
-			System.out.println(chargedAmount - actualAmount);
+			System.out.println(moneyCharged - actualMoney);
 		}
-	}
+		
+		
+    }
 
 }
