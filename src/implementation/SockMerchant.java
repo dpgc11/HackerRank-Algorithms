@@ -6,25 +6,31 @@ import java.util.Set;
 
 public class SockMerchant {
 
-	public static void main(String[] args) {
-		Scanner in = new Scanner(System.in);
-		int n = in.nextInt();
-		Set<Integer> colors = new HashSet<Integer>();
-		int count = 0;
-
+	static int sockMerchant(int n, int[] ar) {
+        // Complete this function
+		int result = 0;
+		Set<Integer> socks = new HashSet<>();
 		for (int i = 0; i < n; i++) {
-			int color = in.nextInt();
-			if (!colors.contains(color)) {
-				colors.add(color);
+			if (!socks.contains(ar[i])) {
+				socks.add(ar[i]);
 			} else {
-				colors.remove(color);
-				count++;
+				socks.remove(ar[i]);
+				result++;
 			}
-
 		}
+		
+		return result;
+    }
 
-		System.out.println(count);
-
-	}
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int[] ar = new int[n];
+        for(int ar_i = 0; ar_i < n; ar_i++){
+            ar[ar_i] = in.nextInt();
+        }
+        int result = sockMerchant(n, ar);
+        System.out.println(result);
+    }
 
 }
