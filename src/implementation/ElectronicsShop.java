@@ -15,9 +15,7 @@ public class ElectronicsShop {
 				}
 			}
 		}
-
 		return maxMoney;
-
 	}
 
 	public static void main(String[] args) {

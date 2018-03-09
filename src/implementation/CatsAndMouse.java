@@ -9,7 +9,7 @@ public class CatsAndMouse {
 	
 	private static final String CAT_A = "Cat A";
 	private static final String CAT_B = "Cat B";
-	private static final String MOUSE_C = "MOUSE_C";
+	private static final String MOUSE_C = "Mouse C";
 	
 	/*
      * Complete the catAndMouse function below.
